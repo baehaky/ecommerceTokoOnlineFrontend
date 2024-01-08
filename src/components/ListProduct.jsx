@@ -1,30 +1,215 @@
+import Carousel from "react-multi-carousel";
+import gambar1 from "../assets/brownies.jpg";
 export default function ListProduct() {
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 600 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 525, min: 0 },
+      items: 1,
+    },
+  };
   return (
-    <section className="">
-      <h1>Our Product</h1>
-      <div className="flex min-h-screen flex-wrap items-center justify-center">
-        <div className="mx-5">
-          <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
-            <img
-              className="w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="product"
-            />
-            <p className="my-4 pl-4 font-bold text-gray-500">Product Name</p>
-            <p className="mb-4 ml-4 text-xl font-semibold text-gray-800">$399</p>
+    <section className="px-10 bg-rose-500 py-10">
+      <div>
+        <h1 className="text-center font-medium text-white text-3xl py-5 underline underline-offset-4 ease-in delay-150 hover:decoration-rose-800">Our Menu</h1>
+        <Carousel responsive={responsive}>
+          <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+            <a href="#">
+              <img className="rounded-t-lg" src={gambar1} alt="" />
+            </a>
+            <div className="p-5">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-rose-500 rounded-lg hover:bg-rose-800"
+              >
+                Read more
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="mx-5">
-          <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
-            <img
-              className="w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="product"
-            />
-            <p className="my-4 pl-4 font-bold text-gray-500">Product Name</p>
-            <p className="mb-4 ml-4 text-xl font-semibold text-gray-800">$399</p>
+          <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+            <a href="#">
+              <img className="rounded-t-lg" src={gambar1} alt="" />
+            </a>
+            <div className="p-5">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-rose-500 rounded-lg hover:bg-rose-800"
+              >
+                Read more
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
+          <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+            <a href="#">
+              <img className="rounded-t-lg" src={gambar1} alt="" />
+            </a>
+            <div className="p-5">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-rose-500 rounded-lg hover:bg-rose-800"
+              >
+                Read more
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+            <a href="#">
+              <img className="rounded-t-lg" src={gambar1} alt="" />
+            </a>
+            <div className="p-5">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-rose-500 rounded-lg hover:bg-rose-800"
+              >
+                Read more
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow">
+            <a href="#">
+              <img className="rounded-t-lg" src={gambar1} alt="" />
+            </a>
+            <div className="p-5">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-rose-500 rounded-lg hover:bg-rose-800"
+              >
+                Read more
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </Carousel>
       </div>
     </section>
   );

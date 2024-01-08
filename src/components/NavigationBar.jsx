@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import LogoNavbar from "../assets/putrihomecooking.png";
+import Footer from "./Footer";
 
 export default function NavigationBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,19 +12,20 @@ export default function NavigationBar() {
 
   return (
     <>
-      <nav className="bg-white w-full fixed z-20 top-0 border-b border-gray-200">
+      <nav className="bg-white w-full z-20 top-0 border-b shadow-lg border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <NavLink
             to="/"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
+            className="flex items-center space-x-3 rtl:space-x-reverse md:w-[350px] "
           >
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
-              alt="Flowbite Logo"
-            />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap">
-              Toko Online
+            <img src={LogoNavbar} className="h-14 md:h-20" alt="Logo" />
+            <span className="self-center text-xl md:text-2xl font-semibold whitespace-nowrap flex flex-col">
+              Putri Home Cooking
+              <span className="h-[2px] bg-rose-600 "></span>
+              <span className="text-xs text-rose-700 font-normal">
+                Usaha Mikro Kecil Menengah (UMKM) <br /> Kuliner Desa Legok,
+                Tangerang, Banten
+              </span>
             </span>
           </NavLink>
 
@@ -56,14 +59,15 @@ export default function NavigationBar() {
               isMobileMenuOpen ? "flex" : "hidden"
             } md:hidden w-full flex-col mt-4`}
           >
+            <hr />
             <NavLink
               to="/"
               onClick={toggleMobileMenu}
               className={({ isActive }) =>
-                    isActive
-                      ? "block py-2 px-3 text-gray-900 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                  }
+                isActive
+                  ? "block py-2 px-3 text-rose-800 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+                  : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+              }
             >
               Home
             </NavLink>
@@ -71,10 +75,10 @@ export default function NavigationBar() {
               to="menu"
               onClick={toggleMobileMenu}
               className={({ isActive }) =>
-                    isActive
-                      ? "block py-2 px-3 text-gray-900 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                  }
+                isActive
+                  ? "block py-2 px-3 text-rose-800 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+                  : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+              }
             >
               Menu
             </NavLink>
@@ -82,10 +86,10 @@ export default function NavigationBar() {
               to="about"
               onClick={toggleMobileMenu}
               className={({ isActive }) =>
-                    isActive
-                      ? "block py-2 px-3 text-gray-900 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                  }
+                isActive
+                  ? "block py-2 px-3 text-rose-800 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+                  : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+              }
             >
               About
             </NavLink>
@@ -93,34 +97,31 @@ export default function NavigationBar() {
               to="contact"
               onClick={toggleMobileMenu}
               className={({ isActive }) =>
-                    isActive
-                      ? "block py-2 px-3 text-gray-900 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                  }
+                isActive
+                  ? "block py-2 px-3 text-rose-800 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+                  : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+              }
             >
               Contact
             </NavLink>
             <button
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+              className="text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
             >
               Sign-Up
             </button>
           </div>
 
           {/* Desktop menu */}
-          <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-            id="navbar-sticky"
-          >
+          <div className="items-center justify-center hidden w-full md:flex md:w-auto">
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
               <li>
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
                     isActive
-                      ? "block py-2 px-3 text-gray-900 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                      ? "block py-2 px-3 text-rose-800 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
                   }
                 >
                   Home
@@ -131,8 +132,8 @@ export default function NavigationBar() {
                   to="menu"
                   className={({ isActive }) =>
                     isActive
-                      ? "block py-2 px-3 text-gray-900 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                      ? "block py-2 px-3 text-rose-800 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
                   }
                 >
                   Menu
@@ -143,11 +144,11 @@ export default function NavigationBar() {
                   to="about"
                   className={({ isActive }) =>
                     isActive
-                      ? "block py-2 px-3 text-gray-900 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                      ? "block py-2 px-3 text-rose-800 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
                   }
                 >
-                  About
+                  About us
                 </NavLink>
               </li>
               <li>
@@ -155,26 +156,26 @@ export default function NavigationBar() {
                   to="contact"
                   className={({ isActive }) =>
                     isActive
-                      ? "block py-2 px-3 text-gray-900 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                      ? "block py-2 px-3 text-rose-800 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
+                      : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-700 md:p-0"
                   }
                 >
-                  Contact
+                  Help
                 </NavLink>
               </li>
-              <li>
-                <button
-                  type="button"
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
-                >
-                  Sign-Up
-                </button>
-              </li>
+              <li></li>
             </ul>
+            <button
+              type="button"
+              className="text-white bg-rose-700 hover:bg-rose-800 font-medium rounded-lg text-sm px-4 py-2"
+            >
+              Sign-Up
+            </button>
           </div>
         </div>
       </nav>
       <Outlet />
+      <Footer/>
     </>
   );
 }

@@ -1,6 +1,27 @@
 import ListProduct from "../components/ListProduct";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import imageCarousel1 from "../assets/brownies.jpg";
+import imageCarousel2 from "../assets/cheesestick.jpg";
+import imageCarousel3 from "../assets/sagon_bakar_samping.jpg";
+
+function CarouselIndex(props) {
+  return (
+    <div
+      style={{ "--image-url": `url(${props.gambar})` }}
+      className={`bg-center bg-cover bg-[image:var(--image-url)] bg-no-repeat bg-gray-800 bg-blend-multiply`}
+    >
+      <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+          {props.title}
+        </h1>
+        <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+          {props.description}
+        </p>
+      </div>
+    </div>
+  );
+}
 export default function IndexPage() {
   const responsive = {
     superLargeDesktop: {
@@ -21,39 +42,30 @@ export default function IndexPage() {
     },
   };
   return (
-    <section className="bg-gray-100 mt-20 px-10">
-      <Carousel responsive={responsive}>
-        <div className="flex justify-center items-center">
-          <div className="overflow-hidden h-auto sm:h-96">
-            <img
-              className="w-full"
-              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-          </div>
-          <div className="absolute flex flex-col text-center justify-center z-30 gap-y-5">
-            <h1 className="text-xl sm:text-3xl text-white shadow-xl uppercase underline ">
-              Android Smartwatch
-            </h1>
-            <p>testting</p>
-          </div>
-        </div>
-        <div className="flex justify-center items-center">
-          <div className="overflow-hidden h-auto sm:h-96">
-            <img
-              className="w-full"
-              src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
-          </div>
-          <div className="absolute flex flex-col text-center justify-center z-30 gap-y-5">
-            <h1 className="text-3xl text-white underline ">
-              Android Smartwatch
-            </h1>
-          </div>
-        </div>
-      </Carousel>
+    <>
+      <section className="min-h-full">
+        <Carousel responsive={responsive}>
+          <CarouselIndex
+            gambar={imageCarousel1}
+            title=" Putri's Home Cooking "
+            description="Here at Flowbite we focus on markets where technology, innovation, and
+          capital can unlock long-term value and drive economic growth."
+          />
+          <CarouselIndex
+            gambar={imageCarousel2}
+            description="Here at Flowbite we focus on markets where technology, innovation, and
+          capital can unlock long-term value and drive economic growth."
+            title=" Putri's Home Cooking "
+          />
+          <CarouselIndex
+            gambar={imageCarousel3}
+            description="Here at Flowbite we focus on markets where technology, innovation, and
+          capital can unlock long-term value and drive economic growth."
+            title=" Putri's Home Cooking "
+          />
+        </Carousel>
+      </section>
       <ListProduct />
-    </section>
+    </>
   );
 }
